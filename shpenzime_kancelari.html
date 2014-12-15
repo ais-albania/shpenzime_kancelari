@@ -1,0 +1,39 @@
+<html>
+  <head>
+    <script type="text/javascript" src="https://www.google.com/jsapi"></script>
+    <script type="text/javascript">
+    google.load("visualization", "1", {packages:["corechart"]});
+    google.setOnLoadCallback(drawSeriesChart);
+
+    function drawSeriesChart() {
+
+      var data = google.visualization.arrayToDataTable([
+        ['Institucione buxhetore',    'vlera',  'ID',	'Kategoria',  'vl'],
+        ['Ap. Min se Fin',    		234000,              1,	'Skaner',       1 ],
+        ['Ap Drejt.Pergj.Tatimeve',    109160,      2,	'Fotokopje',    2 ],
+        ['Ap Min se Shendetesise',     138346,       3,   'Fotokopje',   3 ],
+        ['Fak i Gjuheve te Huaja',     637600,     4,     'Fotokopje',    4 ],
+        ['Ap Drejt.Pergj.Doganave',    342000,      5,   'Fotokopje',    5 ],
+        ['Ap i Min se Ekonomise',      678133,     6,  'Fotokopje',    6 ],
+        ['Ap Min Mbrojtjes',    2296199,           7,   'Fotokopje',   8 ],
+        ['Ap Min se Bujq e Ushq',    207518,       7.2,   'Fotokopje',    9 ],
+        ['Ap Min se Pun te Jasht',    276691,    8.4, 	'Fotokopje',   10 ],
+  	['Dr e Arkivave Shteti',    318000,        9.8,	'Printer',      7 ]
+      ]);
+
+      var options = {
+        title: 'Shpenzimet per disa nga zerat e kancelarise',
+        hAxis: {title: 'vlera'},
+        vAxis: {title: 'ID'},
+        bubble: {textStyle: {fontSize: 11}}
+      };
+
+      var chart = new google.visualization.BubbleChart(document.getElementById('series_chart_div'));
+      chart.draw(data, options);
+    }
+    </script>
+  </head>
+  <body>
+    <div id="series_chart_div" style="width: 900px; height: 800px;"></div>
+  </body>
+</html>
